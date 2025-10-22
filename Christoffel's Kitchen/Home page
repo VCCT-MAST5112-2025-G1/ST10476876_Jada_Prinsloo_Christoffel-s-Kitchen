@@ -1,0 +1,245 @@
+import { motion } from 'motion/react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { Card, CardContent } from './ui/card';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ArrowLeft } from 'lucide-react';
+
+interface Dish {
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  image: string;
+}
+
+const menuData = {
+  starters: [
+    {
+      id: '1',
+      name: 'Truffle Arancini',
+      description: 'Crispy risotto balls with black truffle and parmesan',
+      price: 'R120',
+      image: 'https://images.unsplash.com/photo-1640209872074-dd584b38f2b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcHBldGl6ZXIlMjBzdGFydGVyJTIwZm9vZCUyMGVsZWdhbnR8ZW58MXx8fHwxNzU3MzkxNTI2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '2',
+      name: 'Seared Scallops',
+      description: 'Pan-seared scallops with cauliflower purée and pancetta',
+      price: 'R150',
+      image: 'https://images.unsplash.com/photo-1640209872074-dd584b38f2b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcHBldGl6ZXIlMjBzdGFydGVyJTIwZm9vZCUyMGVsZWdhbnR8ZW58MXx8fHwxNzU3MzkxNTI2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '3',
+      name: 'Burrata Caprese',
+      description: 'Fresh burrata with heirloom tomatoes and basil oil',
+      price: 'R95',
+      image: 'https://images.unsplash.com/photo-1640209872074-dd584b38f2b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcHBldGl6ZXIlMjBzdGFydGVyJTIwZm9vZCUyMGVsZWdhbnR8ZW58MXx8fHwxNzU3MzkxNTI2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    }
+  ],
+  mains: [
+    {
+      id: '4',
+      name: 'Wagyu Beef Tenderloin',
+      description: 'Premium wagyu with roasted vegetables and red wine jus',
+      price: 'R350',
+      image: 'https://images.unsplash.com/photo-1644704265419-96ddaf628e71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWluJTIwY291cnNlJTIwc3RlYWslMjBkaW5uZXJ8ZW58MXx8fHwxNzU3MzQ3OTMwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '5',
+      name: 'Lobster Thermidor',
+      description: 'Maine lobster in rich brandy cream sauce with herbs',
+      price: 'R280',
+      image: 'https://images.unsplash.com/photo-1644704265419-96ddaf628e71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWluJTIwY291cnNlJTIwc3RlYWslMjBkaW5uZXJ8ZW58MXx8fHwxNzU3MzQ3OTMwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '6',
+      name: 'Duck Confit',
+      description: 'Slow-cooked duck leg with cherry gastrique and wild rice',
+      price: 'R220',
+      image: 'https://images.unsplash.com/photo-1644704265419-96ddaf628e71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWluJTIwY291cnNlJTIwc3RlYWslMjBkaW5uZXJ8ZW58MXx8fHwxNzU3MzQ3OTMwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    }
+  ],
+  desserts: [
+    {
+      id: '7',
+      name: 'Chocolate Soufflé',
+      description: 'Warm dark chocolate soufflé with vanilla bean ice cream',
+      price: 'R85',
+      image: 'https://images.unsplash.com/photo-1737700088028-fae0666feb83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNzZXJ0JTIwY2hvY29sYXRlJTIwY2FrZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzU3MzkxNTMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '8',
+      name: 'Lemon Tart',
+      description: 'Classic lemon curd tart with fresh berries and mint',
+      price: 'R70',
+      image: 'https://images.unsplash.com/photo-1737700088028-fae0666feb83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNzZXJ0JTIwY2hvY29sYXRlJTIwY2FrZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzU3MzkxNTMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '9',
+      name: 'Tiramisu',
+      description: 'Traditional Italian tiramisu with espresso and mascarpone',
+      price: 'R80',
+      image: 'https://images.unsplash.com/photo-1737700088028-fae0666feb83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNzZXJ0JTIwY2hvY29sYXRlJTIwY2FrZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzU3MzkxNTMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    }
+  ],
+  drinks: [
+    {
+      id: '10',
+      name: 'Signature Martini',
+      description: 'House gin with dry vermouth and botanical garnish',
+      price: 'R110',
+      image: 'https://images.unsplash.com/photo-1723408409535-4e57e443280b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2NrdGFpbCUyMGRyaW5rJTIwZ2xhc3MlMjBlbGVnYW50fGVufDF8fHx8MTc1NzM5MTUzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '11',
+      name: 'Aged Bordeaux',
+      description: '2018 Château Margaux - full-bodied red wine',
+      price: 'R140',
+      image: 'https://images.unsplash.com/photo-1723408409535-4e57e443280b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2NrdGFpbCUyMGRyaW5rJTIwZ2xhc3MlMjBlbGVnYW50fGVufDF8fHx8MTc1NzM5MTUzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    },
+    {
+      id: '12',
+      name: 'Craft Beer Flight',
+      description: 'Selection of three local craft beers',
+      price: 'R90',
+      image: 'https://images.unsplash.com/photo-1723408409535-4e57e443280b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2NrdGFpbCUyMGRyaW5rJTIwZ2xhc3MlMjBlbGVnYW50fGVufDF8fHx8MTc1NzM5MTUzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    }
+  ]
+};
+
+interface TodaysMenuProps {
+  onBack: () => void;
+  onDishClick: (dish: Dish) => void;
+}
+
+export function TodaysMenu({ onBack, onDishClick }: TodaysMenuProps) {
+  const DishCard = ({ dish }: { dish: Dish }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Card 
+        className="cursor-pointer transition-all duration-300 hover:shadow-md hover:scale-[1.02] bg-white/90 backdrop-blur-sm border-amber-200"
+        onClick={() => onDishClick(dish)}
+      >
+        <CardContent className="p-4">
+          <div className="flex gap-4">
+            <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+              <ImageWithFallback
+                src={dish.image}
+                alt={dish.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-amber-800 mb-1 truncate">{dish.name}</h3>
+              <p className="text-amber-700 text-sm mb-2 line-clamp-2">{dish.description}</p>
+              <p className="text-orange-600">{dish.price}</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100">
+      {/* Header */}
+      <motion.header
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex items-center px-6 py-4 bg-white/80 backdrop-blur-sm shadow-sm"
+      >
+        <button
+          onClick={onBack}
+          className="mr-4 p-2 rounded-full hover:bg-amber-100 transition-colors"
+        >
+          <ArrowLeft className="w-6 h-6 text-amber-800" />
+        </button>
+        <h1 className="text-2xl text-amber-800">Today's Menu</h1>
+      </motion.header>
+
+      {/* Menu Content */}
+      <main className="px-6 py-6">
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-2xl mx-auto"
+        >
+          <Tabs defaultValue="starters" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-6 bg-white/80 backdrop-blur-sm">
+              <TabsTrigger value="starters" className="data-[state=active]:bg-amber-200 data-[state=active]:text-amber-800">
+                Starters
+              </TabsTrigger>
+              <TabsTrigger value="mains" className="data-[state=active]:bg-amber-200 data-[state=active]:text-amber-800">
+                Mains
+              </TabsTrigger>
+              <TabsTrigger value="desserts" className="data-[state=active]:bg-amber-200 data-[state=active]:text-amber-800">
+                Desserts
+              </TabsTrigger>
+              <TabsTrigger value="drinks" className="data-[state=active]:bg-amber-200 data-[state=active]:text-amber-800">
+                Drinks
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="starters" className="space-y-4">
+              {menuData.starters.map((dish, index) => (
+                <motion.div
+                  key={dish.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <DishCard dish={dish} />
+                </motion.div>
+              ))}
+            </TabsContent>
+
+            <TabsContent value="mains" className="space-y-4">
+              {menuData.mains.map((dish, index) => (
+                <motion.div
+                  key={dish.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <DishCard dish={dish} />
+                </motion.div>
+              ))}
+            </TabsContent>
+
+            <TabsContent value="desserts" className="space-y-4">
+              {menuData.desserts.map((dish, index) => (
+                <motion.div
+                  key={dish.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <DishCard dish={dish} />
+                </motion.div>
+              ))}
+            </TabsContent>
+
+            <TabsContent value="drinks" className="space-y-4">
+              {menuData.drinks.map((dish, index) => (
+                <motion.div
+                  key={dish.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <DishCard dish={dish} />
+                </motion.div>
+              ))}
+            </TabsContent>
+          </Tabs>
+        </motion.div>
+      </main>
+    </div>
+  );
+}
+
