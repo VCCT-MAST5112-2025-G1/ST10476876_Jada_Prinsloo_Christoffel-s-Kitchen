@@ -43,9 +43,9 @@ Press Ctrl + C in the terminal to stop the running process.
 -I built this app using React and TypeScript with TailwindCSS for clean, responsive design. It starts with an animated splash screen that loads into a smooth, motion-based home interface. The menu is fully dynamic, showing starters, mains, desserts, and drinks in tabs. I created a custom hook to let the chef add, edit, or delete dishes, with data saved in local storage. The consistent amber-orange theme and animations give it a polished, professional feel.”
 
 ## Reference List:
-CloudLabs, 2025. CloludLabs. [online] Available at: https://portal.cloudlabs.ai/virtual-machine [Accessed 20 October 2025].
-YouTube,2025. YouTube. [online] Available at: https://www.youtube.com/ [Accessed 20 October 2025]
-Google AI. 2025. Google AI [online] Available at https://aistudio.google.com/apps/temp/1?showAssistant=true&showCode=true [Accessed 20 October 2025]
+- CloudLabs, 2025. CloludLabs. [online] Available at: https://portal.cloudlabs.ai/virtual-machine [Accessed 20 October 2025].
+- YouTube,2025. YouTube. [online] Available at: https://www.youtube.com/ [Accessed 20 October 2025]
+- Google AI. 2025. Google AI [online] Available at https://aistudio.google.com/apps/temp/1?showAssistant=true&showCode=true [Accessed 20 October 2025]
 
 ## Link to YouTube video
 https://youtube.com/shorts/aZcV-hi7CQY?feature=share
