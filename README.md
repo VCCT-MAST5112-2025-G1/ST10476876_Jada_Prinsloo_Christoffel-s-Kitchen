@@ -45,6 +45,7 @@ Press Ctrl + C in the terminal to stop the running process.
 ## Reference List:
 CloudLabs, 2025. CloludLabs. [online] Available at: https://portal.cloudlabs.ai/virtual-machine [Accessed 20 October 2025].
 YouTube,2025. YouTube. [online] Available at: https://www.youtube.com/ [Accessed 20 October 2025]
+Google AI. 2025. Google AI [online] Available at https://aistudio.google.com/apps/temp/1?showAssistant=true&showCode=true [Accessed 20 October 2025]
 
 ## Link to YouTube video
 https://youtube.com/shorts/aZcV-hi7CQY?feature=share
