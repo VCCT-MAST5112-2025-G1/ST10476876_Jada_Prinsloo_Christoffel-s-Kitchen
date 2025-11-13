@@ -223,3 +223,6 @@ The final app now:
 
 ## Youtube link
 https://studio.youtube.com/channel/UCVcQymZh4_3sWn_XVGxsU6A/videos/short?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D
+
+## Github link
+https://github.com/VCCT-MAST5112-2025-G1/ST10476876_Jada_Prinsloo_Christoffel-s-Kitchen/edit/main/README.md
