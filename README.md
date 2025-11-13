@@ -201,22 +201,22 @@ The final app now:
 
 
 ## Refrences 
--These references acknowledge all tools, frameworks, and resources used during development and research.
+-These references acknowledge all tools, frameworks, and resources used during development and research. [Accessed 9 November 2025]
 
--Facebook Open Source. (2024). React – A JavaScript library for building user interfaces. Retrieved from https://react.dev
+-Facebook Open Source. (2024). React – A JavaScript library for building user interfaces. Retrieved from https://react.dev [Accessed 9 November 2025]
 
--Tailwind Labs. (2024). Tailwind CSS Documentation. Retrieved from https://tailwindcss.com/docs
+-Tailwind Labs, (2024). Tailwind CSS Documentation. Retrieved from https://tailwindcss.com/docs [Accessed 9 November 2025]
 
--Remix Software. (2024). React Router Documentation. Retrieved from https://reactrouter.com/en/main
+-Remix Software, (2024). React Router Documentation. Retrieved from https://reactrouter.com/en/main [Accessed 9 November 2025]
 
--Framer. (2024). Framer Motion Documentation. Retrieved from https://www.framer.com/motion/
+-Framer, (2024). Framer Motion Documentation. Retrieved from https://www.framer.com/motion/ [Accessed 9 November 2025]
 
--Lucide. (2024). Lucide React Icons. Retrieved from https://lucide.dev/
+-Lucide, (2024). Lucide React Icons. Retrieved from https://lucide.dev/ [Accessed 9 November 2025]
 
--Date-FNS. (2024). Modern JavaScript Date Utility Library. Retrieved from https://date-fns.org/
+-Date-FNS, (2024). Modern JavaScript Date Utility Library. Retrieved from https://date-fns.org/ [Accessed 9 November 2025]
 
--Shadcn/UI. (2024). Beautifully designed components built with Radix UI and Tailwind CSS. Retrieved from https://ui.shadcn.com
+-Shadcn/UI, (2024). Beautifully designed components built with Radix UI and Tailwind CSS. Retrieved from https://ui.shadcn.com [Accessed 9 November 2025]
 
--Mozilla Developer Network (MDN). (2024). React JSX Guide and TypeScript Integration. Retrieved from https://developer.mozilla.org
+-Mozilla Developer Network (MDN),  (2024). React JSX Guide and TypeScript Integration. Retrieved from https://developer.mozilla.org [ Accessed 9 November 2025]
 
--ChatGPT (OpenAI). (2025). Assistance in debugging and aligning project with marking rubric. OpenAI.
+-ChatGPT (OpenAI). (2025). Assistance in debugging and aligning project with marking rubric. OpenAI. [Accessed 9 November]
