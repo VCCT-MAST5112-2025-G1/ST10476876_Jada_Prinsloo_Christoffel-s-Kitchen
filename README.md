@@ -226,3 +226,4 @@ https://studio.youtube.com/channel/UCVcQymZh4_3sWn_XVGxsU6A/videos/short?filter=
 
 ## Github link
 https://github.com/VCCT-MAST5112-2025-G1/ST10476876_Jada_Prinsloo_Christoffel-s-Kitchen/edit/main/README.md
+https://github.com/VCCT-MAST5112-2025-G1/ST10476876_Jada_Prinsloo_Christoffel-s-Kitchen
